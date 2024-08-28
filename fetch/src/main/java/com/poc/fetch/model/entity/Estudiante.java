@@ -16,14 +16,12 @@ import java.util.List;
 @NoArgsConstructor
 @Entity(name = "Estudiante")
 @Table(name = "estudiantes")
-/*
+
 //Ejemplo con fetch con join (Debido a que ftech join no soporta paginacion) 1 query trae ids , la segunda trae la info joiniada
 @NamedQuery(name = "getAllIds", query = "SELECT e.id FROM Estudiante e")
 @NamedQuery(name = "getAllFetchIn", query = "SELECT e FROM Estudiante e join fetch e.proyectos where e.id IN :ids")
 @NamedQuery(name = "getByNameIds", query = "SELECT e.id FROM Estudiante e where e.nombre LIKE ?1")
 @NamedQuery(name = "getByNameFetchIn", query = "SELECT e FROM Estudiante e join fetch e.proyectos where e.nombre LIKE ?1")
-*/
-
 //Ejemplo sin  Fetch con Join
 @NamedQuery(name = "getAllJoin", query = "SELECT e FROM Estudiante e join fetch e.proyectos")
 @NamedQuery(name = "getByNameJoin", query = "SELECT e FROM Estudiante e join fetch e.proyectos where e.nombre LIKE ?1")
@@ -53,22 +51,11 @@ public class Estudiante implements ICsvModel {
     private Integer numeroControl;
     private String direccion;
 
-
-    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Fetch(FetchMode.JOIN)
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Proyecto> proyectos;
-
     @Override
     public String toCsv() {
-        return new StringBuilder()
-                .append(id).append(",")
-                .append(nombre).append(",")
-                .append(apellidoPaterno).append(",")
-                .append(apellidoMaterno).append(",")
-                .append(edad).append(",")
-                .append(numeroControl)
-                .append("\n")
-                .toString();
+        return id+","+nombre+","+apellidoPaterno+","+apellidoMaterno+","+edad+","+numeroControl+"\n";
     }
 
     @Override

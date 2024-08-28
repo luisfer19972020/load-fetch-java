@@ -19,5 +19,5 @@ n
 >fetch/src/main/java/com/poc/fetch/model/entity/Estudiante.java,e\e\eef24c6ba3f62d38353d8663be735133838e01a1
 |
 Lfetch/src/main/java/com/poc/fetch/model/Repository/EstudianteRepository.java,b\e\be0a5574db41b836eb0187db3a63ee2e6d568549
-j
-:fetch/src/main/java/com/poc/fetch/util/IWriteListUtil.java,7\c\7c47a3ae8bc93fe6b7ed2e2d718eb58020ff1563
+i
+9fetch/src/main/java/com/poc/fetch/util/WriteListUtil.java,8\1\8181081ff2fde1be52a7d2f221d08371d9f16475

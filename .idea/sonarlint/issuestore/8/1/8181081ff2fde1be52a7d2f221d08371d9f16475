@@ -1,0 +1,16 @@
+
+E
+java:S37409"/Provide the parametrized type for this generic.(˜˜çÚ
+f
+java:S1192"KDefine a constant instead of duplicating this literal "salida.csv" 3 times.(úíùûÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Æà¥“øÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(öšŠıÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(†‹Åªúÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ
+V	java:S125""<This block of commented-out lines of code should be removed.(öšŠıÿÿÿÿ
+E	java:S106%"+Replace this use of System.out by a logger.(†‹Åªúÿÿÿÿ
+E	java:S106*"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ
+E	java:S1066"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ
+C
+java:S14819"-Remove this unused "iterator" local variable.(˜˜çÚ

@@ -33,13 +33,13 @@ public class EstudianteDAO implements IEstudianteDAO {
     }
 
     public LoadFetchUtil<Estudiante> getAllStudentsF(int fetchSize) {
-        return new LoadFetchUtil<>(entityManager, "getAll", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE);//Sin join
-        //return new LoadFetchUtil<>(entityManager, "getAllIds", "getAllFetchIn", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE);//Con join
+        //return new LoadFetchUtil<>(entityManager, "getAll", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE);//Sin join
+        return new LoadFetchUtil<>(entityManager, "getAllIds", "getAllFetchIn", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE);//Con join
     }
 
     public LoadFetchUtil<Estudiante> getByNombreF(String nombre, int fetchSize) {
-        return new LoadFetchUtil<>(entityManager, "getByName", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE, "%".concat(nombre).concat("%"));//Sin join
-        //return new LoadFetchUtil<>(entityManager, "getByNameIds", "getByNameFetchIn", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE, "%".concat(nombre).concat("%"));//Con join
+        //return new LoadFetchUtil<>(entityManager, "getByName", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE, "%".concat(nombre).concat("%"));//Sin join
+        return new LoadFetchUtil<>(entityManager, "getByNameIds", "getByNameFetchIn", fetchSize, LoadFetchUtil.NAMED_QUERY_TYPE, "%".concat(nombre).concat("%"));//Con join
     }
 
 }

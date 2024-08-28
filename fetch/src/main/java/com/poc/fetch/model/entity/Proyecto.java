@@ -20,10 +20,9 @@ public class Proyecto {
     @Column(name="calificadora_id")
     private String calificadoraId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "estudiante_id")
     private Estudiante estudiante;
-
 
     @Column(name="titulo")
     private String titulo;

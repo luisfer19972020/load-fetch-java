@@ -50,6 +50,10 @@ public class LoadFetchUtil<T extends ICsvModel> implements Iterable<T> {
         return new FetchIterator();
     }
 
+    public int getFetchSize() {
+        return fetchSize;
+    }
+
     private class FetchIterator implements Iterator<T> {
 
         private int startPosition = 0;
@@ -88,7 +92,7 @@ public class LoadFetchUtil<T extends ICsvModel> implements Iterable<T> {
         private void fetchWithOutJoin() {
             Query query = getQuery();
             setParameters(query);
-            query.setHint("jakarta.persistence.query.timeout", fetchSize);
+            //query.setHint("jakarta.persistence.query.timeout", fetchSize);
             query.setFirstResult(totalPostions);
             query.setMaxResults(fetchSize);
             currentResults = query.getResultList();
@@ -98,7 +102,7 @@ public class LoadFetchUtil<T extends ICsvModel> implements Iterable<T> {
         private void fetWithJoin() {
             Query query = entityManager.createNamedQuery(querystring, Object.class);
             setParameters(query);
-            query.setHint("jakarta.persistence.query.timeout", fetchSize);
+            //query.setHint("jakarta.persistence.query.timeout", fetchSize);
             query.setFirstResult(totalPostions);
             query.setMaxResults(fetchSize);
             Query queryFI = entityManager.createNamedQuery(queryFetchIn, Estudiante.class);
